@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>BES File - Curso</title>
+    <script>
+        function abrirPDF() {
+            window.open('aulas/Introdução.pdf', '_blank');
+        }
+
+        // function abrirPDF2() {
+        //     window.open('aulas/Introdução.pdf', '_blank');
+        // }
+
+        // Função para rolagem suave
+    function scrollToSection(sectionId) {
+        const section = document.querySelector(sectionId);
+        if (section) {
+            window.scrollTo({
+                top: section.offsetTop,
+                behavior: "smooth"
+            });
+        }
+    }
+
+    // Adiciona um evento de clique para cada link na barra de navegação
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Evita o comportamento padrão do link
+            const targetSectionId = link.getAttribute("href");
+            scrollToSection(targetSectionId);
+        });
+    });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>BES File</h1>
+        <nav>
+            <ul>
+                <li><a href="#section1">Aulas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="espaco-quadrado"></div>
+    <div id="section1" class="colunas">
+        <div class="coluna1">
+            <div class="quadrado1" onclick="abrirPDF()"></div>
+            <div class="quadrado2" onclick="abrirPDF2()"></div>
+            <div class="quadrado3"></div>
+            <div class="quadrado4"></div>
+        </div>
+        <div class="coluna2">
+            <div class="quadrado-google">
+                <h1 style="color: #FF0000">Google</h1>
+
+                <p>Google LLC é uma empresa de tecnologia multinacional americana com foco em inteligência artificial, publicidade online, tecnologia de mecanismo de busca, computação em nuvem, software de computador, computação quântica, comércio eletrônico e eletrônicos de consumo.</p>
+                <hr>
+            </div>
+            <div class="quadrado-word">
+                <h1 style="color: #0572CB">Google Docs</h1>
+
+                <p>Sabe o que é contar com um editor de texto super prático e intuitivo de utilizar, gratuito, sem ter que comprar licenças ou instalar em sua máquina, disponível em qualquer computador ou dispositivo móvel que você acessar, onde quer que esteja e com atualizações automáticas?</p>
+                <hr>
+            </div>
+            <div class="quadrado-sheets">
+                <h1 style="color: #407C51">Google Sheets</h1>
+
+                <p>Os programas para criar planilhas são cheios de truques escondidos (alguns nem tanto!) que facilitam a rotina de trabalho. E entre as funções do Google Sheets estão incluídos vários segredos, atalhos e configurações que aumentam a produtividade no trabalho.</p>
+                <hr>
+            </div>
+            <div class="quadrado-slide">
+                <h1 style="color: #FDC12C">Google Slides</h1>
+
+                <p>A forma como fazemos as apresentações de trabalho evoluiu bastante nos últimos anos. A acessibilidade a ferramentas cada vez mais robustas possibilitam ilustrar melhor nossas ideias e trazer um conteúdo claro e objetivo aos participantes.</p>
+                <hr>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
